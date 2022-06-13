@@ -18,8 +18,11 @@ public class Sockets {
             // 4. Close the socket 
 
             // Remember, ServerSocket is used to receive connections in the Server application and Socket is used to send and receive data from the individual clients.
-
             
+
+            // Note: If request processing takes a longer time, which is not in our case, the other connection has to wait. This problem can be solved by using threads or Java NIO non-blocking selectors and channels.
+
+
         try (ServerSocket server = new ServerSocket(8080)) {
             System.out.println("listening for connection on port 8080 ... ");
             while(true){
